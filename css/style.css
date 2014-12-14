@@ -41,13 +41,13 @@
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #ff3e3e;
+		color: #3c62a3;
 		text-decoration: none;
 	}
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #ff3e3e !important;
+			color: #216beb !important;
 			text-decoration: none;
 		}
 
