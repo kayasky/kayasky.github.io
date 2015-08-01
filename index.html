@@ -1,15 +1,17 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="myApp">
     <head>
         <title>Satbir Jhuti</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="Hello, I am Satbir Jhuti. I love Web Development, Designing User Interfaces, Food & Photography" />
-        <meta name="keywords" content="satbir singh jhuti web development developer toronto filemobile newzulu" />
+        <meta name="keywords" content="satbir singh jhuti web development developer toronto" />
         <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.poptrox.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="js/app.js"></script>
         <script src="js/skel.min.js"></script>
         <script src="js/init.js"></script>
         <noscript>
@@ -37,7 +39,7 @@
         <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
         <meta name="msapplication-config" content="/icons/browserconfig.xml">
     </head>
-    <body id="top">
+    <body id="top" ng-controller="myAppCtrl">
 
         <!-- Header -->
             <header id="header">
