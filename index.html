@@ -40,9 +40,13 @@
         <meta name="msapplication-config" content="/icons/browserconfig.xml">
     </head>
     <body id="top" ng-controller="myAppCtrl">
-
+      <style>
+        .dynamicBackground {
+          background-image: url(css/images/overlay.png), url({{ coverImage }}) !important;
+        }
+      </style>
         <!-- Header -->
-            <header id="header" style="background-image: url(css/images/overlay.png), url({{ coverImage }})">
+            <header id="header" class="dynamicBackground">
                 <a href="#" class="image avatar"><img src="images/profile.jpg" alt="" /></a>
                 <h1><strong>Hello</strong>, I am <strong>Satbir Jhuti.</strong><br />
                 I love Web Development,<br />
@@ -58,7 +62,7 @@
                         <header class="major">
                             <h2>About:</h2>
                         </header>
-                        <p>Satbir is a Web Developer based in Toronto, Canada. Satbir is also a novice cycling enthusiast, musician and loves travelling.
+                        <p>Satbir is a Web Developer based in Toronto, Canada. Satbir is also a cycling enthusiast, musician and loves travelling.
                            When not coding or trying out new languages, he can be found <a href="https://instagram.com/s_tbr/" target="_blank">exploring</a> the beautiful city of
                            <a href="https://twitter.com/hashtag/toronto?src=hash" target="_blank">#Toronto</a> or playing some tunes on his guitar.<br />
                         </p>
