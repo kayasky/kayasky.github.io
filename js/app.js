@@ -5,8 +5,7 @@ myApp.controller("myAppCtrl", [ "$scope", "$http", "$q", function($scope, $http,
   $scope.instaPost = {},
   $scope.coverImage = "",
   $scope.coverVideo = "",
-  $scope.instaReloadInterval = 5000,
-  $scope.reloadLimit = 0,
+  $scope.instaReloadInterval = 10000,
   $scope.instaParams = {
     "uid": "2966059",
     "client_id": "1716a38e53104ce5b87665e86faad108"
@@ -46,7 +45,7 @@ myApp.controller("myAppCtrl", [ "$scope", "$http", "$q", function($scope, $http,
 
   /** util to keep refreshing the instagram post */
   $scope.initAutoPostRefresh = function() {
-    var myInterval = setInterval(function() {
+    var refreshInterval = setInterval(function() {
       $scope.instaPost = $scope.instaPosts[$scope.getRandomIntInclusive(0, ($scope.instaPosts.length - 1))];
       $scope.parsePost($scope.instaPost);
       $scope.$apply();
