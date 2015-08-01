@@ -931,10 +931,10 @@
 /* Header */
 
 	#header {
-		background-color: #040105;
+		background-color: #000000;
 		background-attachment: scroll,								fixed;
-		background-image: url("images/overlay.png"), url("../images/bg.jpg");
-		background-position: top left,							top left;
+		background-image: url("images/overlay.png");
+		background-position: top left,							cover;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								auto 100%;
 		color: rgba(255, 255, 255, 0.5);
@@ -945,6 +945,10 @@
 		text-align: right;
 		top: 0;
 		width: 35%;
+		-webkit-transition: background 1s ease-in-out;
+		-moz-transition: background 1s ease-in-out;
+		-o-transition: background 1s ease-in-out;
+		transition: background 1s ease-in-out;
 	}
 
 		#header strong, #header b {
@@ -984,7 +988,7 @@
 		}
 
 			#footer .icons a {
-				color: rgba(255, 255, 255, 0.4);
+				color: rgba(255, 255, 255, 0.7);
 			}
 
 		#footer .copyright {

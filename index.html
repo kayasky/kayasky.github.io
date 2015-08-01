@@ -1,15 +1,17 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="myApp">
     <head>
         <title>Satbir Jhuti</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="Hello, I am Satbir Jhuti. I love Web Development, Designing User Interfaces, Food & Photography" />
-        <meta name="keywords" content="satbir singh jhuti web development developer toronto filemobile newzulu" />
+        <meta name="keywords" content="satbir singh jhuti web development developer toronto" />
         <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.poptrox.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="js/app.js"></script>
         <script src="js/skel.min.js"></script>
         <script src="js/init.js"></script>
         <noscript>
@@ -37,10 +39,14 @@
         <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
         <meta name="msapplication-config" content="/icons/browserconfig.xml">
     </head>
-    <body id="top">
-
+    <body id="top" ng-controller="myAppCtrl">
+      <style>
+        .dynamicBackground {
+          background-image: url(css/images/overlay.png), url({{ coverImage }}) !important;
+        }
+      </style>
         <!-- Header -->
-            <header id="header">
+            <header id="header" class="dynamicBackground">
                 <a href="#" class="image avatar"><img src="images/profile.jpg" alt="" /></a>
                 <h1><strong>Hello</strong>, I am <strong>Satbir Jhuti.</strong><br />
                 I love Web Development,<br />
@@ -54,11 +60,11 @@
                 <!-- One -->
                     <section id="one">
                         <header class="major">
-                            <h2>My story</h2>
+                            <h2>About:</h2>
                         </header>
-                        <p>I am a Web Developer on <a href="http://www.filemobile.com/about-bios" target="_blank">Filemobile</a>'s Product team.
-                           When not coding or trying out new languages, I can be found <a href="https://instagram.com/s_tbr/" target="_blank">exploring</a> the beautiful city of
-                           <a href="https://twitter.com/hashtag/toronto?src=hash" target="_blank">#Toronto</a> or playing some tunes on my guitar.<br />
+                        <p>Satbir is a Web Developer based in Toronto, Canada. Satbir is also a cycling enthusiast, musician and loves travelling.
+                           When not coding or trying out new languages, he can be found <a href="https://instagram.com/s_tbr/" target="_blank">exploring</a> the beautiful city of
+                           <a href="https://twitter.com/hashtag/toronto?src=hash" target="_blank">#Toronto</a> or playing some tunes on his guitar.<br />
                         </p>
                     </section>
 
@@ -90,7 +96,6 @@
                     <li><a href="https://www.linkedin.com/in/satbir" class="icon fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
                     <li><a href="https://github.com/satbirjhuti" class="icon fa-github" target="_blank"><span class="label">Github</span></a></li>
                     <li><a href="https://instagram.com/s_tbr/" class="icon fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
-                    
                 </ul>
             </footer>
             <script>
