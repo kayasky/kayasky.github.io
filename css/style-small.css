@@ -48,6 +48,10 @@
 			font-size: 1.35em;
 		}
 
+		.instaVideoContainer {
+			display: none;
+		}
+
 /* Footer */
 
 	#footer {

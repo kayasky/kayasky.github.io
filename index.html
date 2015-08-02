@@ -52,6 +52,11 @@
                 I love Web Development,<br />
                 Designing User Interfaces,<br />
                 Food &amp; Photography</h1>
+              <div class="instaVideoContainer" ng-if="coverVideo">
+                <video autoplay loop class="instaVideo" type="video/mp4" ng-src="{{ coverVideo }}">
+                  Your browser does not support the <code>video</code> element.
+                </video>
+              </div>
             </header>
 
         <!-- Main -->

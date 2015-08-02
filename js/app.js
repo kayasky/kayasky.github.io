@@ -5,7 +5,7 @@ myApp.controller("myAppCtrl", [ "$scope", "$http", "$q", function($scope, $http,
   $scope.instaPost = {},
   $scope.coverImage = "",
   $scope.coverVideo = "",
-  $scope.instaReloadInterval = 10000,
+  $scope.instaReloadInterval = 8000,
   $scope.instaParams = {
     "uid": "2966059",
     "client_id": "1716a38e53104ce5b87665e86faad108"
@@ -40,6 +40,8 @@ myApp.controller("myAppCtrl", [ "$scope", "$http", "$q", function($scope, $http,
     $scope.coverImage = post.images.standard_resolution.url;
     if (post.videos) {
       $scope.coverVideo = post.videos.standard_resolution.url;
+    } else {
+      $scope.coverVideo = "";
     }
   };
 
@@ -68,3 +70,12 @@ myApp.controller("myAppCtrl", [ "$scope", "$http", "$q", function($scope, $http,
   $scope.initAutoPostRefresh();
 
 }]);
+
+/** Allow crossdomain video from the Instagram CDN */
+myApp.config(function($sceDelegateProvider) {
+ $sceDelegateProvider.resourceUrlWhitelist([
+   // Allow same origin resource loads.
+   'self',
+   // Allow loading from our assets domain.  Notice the difference between * and **.
+   'https://*.cdninstagram.com/**']);
+ });

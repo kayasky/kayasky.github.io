@@ -953,10 +953,12 @@
 
 		#header strong, #header b {
 			color: #ffffff;
+			z-index: 999;
 		}
 
 		#header h2, #header h3, #header h4, #header h5, #header h6 {
 			color: #ffffff;
+			z-index: 999;
 		}
 
 		#header h1 {
@@ -964,12 +966,14 @@
 			font-size: 1.35em;
 			line-height: 1.75em;
 			margin: 0;
+			z-index: 999;
 		}
 
 		#header .image.avatar {
 			margin: 0 0 1em 0;
 			width: 6.25em;
 			opacity: 0.85;
+			z-index: 999;
 		}
 
 /* Footer */

@@ -38,6 +38,10 @@
 				display: inline;
 			}
 
+		.instaVideoContainer {
+			display: none;
+		}
+
 /* Footer */
 
 	#footer {

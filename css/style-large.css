@@ -9,6 +9,7 @@
 	#header {
 		padding: 6em 3em 3em 3em;
 		width: 30%;
+		background-position: cover !important;
 	}
 
 		#header h1 {
@@ -17,6 +18,20 @@
 
 			#header h1 br {
 				display: none;
+			}
+
+			.instaVideoContainer {
+				top: 0;
+				position: absolute;
+				left: 0;
+				width: 100%;
+				overflow: hidden;
+				z-index: -1;
+			}
+
+			.instaVideoContainer video {
+				height: 100%;
+				margin-left: -50%;
 			}
 
 /* Footer */

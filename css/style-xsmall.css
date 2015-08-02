@@ -48,6 +48,10 @@
 			display: none;
 		}
 
+		.instaVideoContainer {
+			display: none;
+		}
+
 /* Footer */
 
 	#footer .copyright li {
