@@ -1,32 +1,35 @@
+'use strict';
+
 var myApp = angular.module("myApp", []);
 
 myApp.controller("myAppCtrl", [ "$scope", "$http", "$q", function($scope, $http, $q) {
-  $scope.instaPosts = [], // This will contain all the instagram posts
-  $scope.instaPost = {},
-  $scope.coverImage = "",
-  $scope.coverVideo = "",
-  $scope.instaReloadInterval = 8000,
-  $scope.instaParams = {
-    "uid": "2966059",
-    "client_id": "1716a38e53104ce5b87665e86faad108"
-  }; //instagram constants
+  var instaPosts = [], // This will contain all the instagram posts
+    instaPost = {},
+    instaReloadInterval = 8000,
+    instaParams = {
+      "uid": "2966059",
+      "client_id": "1716a38e53104ce5b87665e86faad108"
+    }; //instagram constants
 
-  $scope.buildInstagramURI = function(params) {
+  $scope.coverImage = "";
+  $scope.coverVideo = "";
+
+  var buildInstagramURI = function(params) {
     return "https://api.instagram.com/v1/users/" + params.uid + "/media/recent/?client_id=" + params.client_id + "&callback=JSON_CALLBACK";
   };
 
-  $scope.getRandomIntInclusive = function(min, max) {
+  var getRandomIntInclusive = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  };
 
-  $scope.handleException = function() {
+  var handleException = function() {
     console.log(arguments);
-  }
+  };
 
   /** This returns a promise with the instagram posts */
-  $scope.getInstagramPosts = function(params) {
+  var getInstagramPosts = function(params) {
     return $q(function(resolve, reject) {
-      $http.jsonp($scope.buildInstagramURI(params))
+      $http.jsonp(buildInstagramURI(params))
         .success(function(result, status, headers, config) {
           resolve(result.data);
         }).
@@ -36,7 +39,7 @@ myApp.controller("myAppCtrl", [ "$scope", "$http", "$q", function($scope, $http,
     });
   };
 
-  $scope.parsePost = function(post) {
+  var parsePost = function(post) {
     $scope.coverImage = post.images.standard_resolution.url;
     if (post.videos) {
       $scope.coverVideo = post.videos.standard_resolution.url;
@@ -46,28 +49,28 @@ myApp.controller("myAppCtrl", [ "$scope", "$http", "$q", function($scope, $http,
   };
 
   /** util to keep refreshing the instagram post */
-  $scope.initAutoPostRefresh = function() {
+  var initAutoPostRefresh = function() {
     var refreshInterval = setInterval(function() {
-      $scope.instaPost = $scope.instaPosts[$scope.getRandomIntInclusive(0, ($scope.instaPosts.length - 1))];
-      $scope.parsePost($scope.instaPost);
+      instaPost = instaPosts[getRandomIntInclusive(0, (instaPosts.length - 1))];
+      parsePost(instaPost);
       $scope.$apply();
-    }, $scope.instaReloadInterval);
+    }, instaReloadInterval);
   };
 
   /** Finally, we define getInstaPost to get the post to be displayed randomly selecting it from the data array */
-  $scope.getInstaPost = function() {
-    $scope.postsPromise = $scope.getInstagramPosts($scope.instaParams);
-    $scope.postsPromise.then(function(posts) {
-      $scope.instaPosts = posts;
-      $scope.instaPost = posts[$scope.getRandomIntInclusive(0, (posts.length - 1))];
-      $scope.parsePost($scope.instaPost);
+  var getInstaPost = function() {
+    var postsPromise = getInstagramPosts(instaParams);
+    postsPromise.then(function(posts) {
+      instaPosts = posts;
+      instaPost = posts[getRandomIntInclusive(0, (posts.length - 1))];
+      parsePost(instaPost);
     }, function(err) {
-      $scope.handleException(err);
+      handleException(err);
     });
   };
 
-  $scope.getInstaPost();
-  $scope.initAutoPostRefresh();
+  getInstaPost();
+  initAutoPostRefresh();
 
 }]);
 
