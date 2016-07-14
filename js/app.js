@@ -8,14 +8,14 @@ myApp.controller("myAppCtrl", [ "$scope", "$http", "$q", function($scope, $http,
     instaReloadInterval = 8000,
     instaParams = {
       "uid": "2966059",
-      "client_id": "1716a38e53104ce5b87665e86faad108"
+      "access_token": "2966059.1716a38.d4e96d63783f44449d8d395c014bd797"
     }; //instagram constants
 
   $scope.coverImage = "";
   $scope.coverVideo = "";
 
   var buildInstagramURI = function(params) {
-    return "https://api.instagram.com/v1/users/" + params.uid + "/media/recent/?client_id=" + params.client_id + "&callback=JSON_CALLBACK";
+    return "https://api.instagram.com/v1/users/" + params.uid + "/media/recent/?access_token=" + params.access_token + "&callback=JSON_CALLBACK";
   };
 
   var getRandomIntInclusive = function(min, max) {
