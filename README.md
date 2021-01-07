@@ -1,3 +1,3 @@
 My personal website.
 
-[jhuti.com](http://jhuti.com)
+[jhuti.com](http://itskaya.ca)
