@@ -9,27 +9,6 @@ body {
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-/*
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #222;
-    color: white;
-  }
-}
-
-@media (min-width: 12450px) {
-
-} */
-
-section.section {
-  background-color: white;
-  text-align: center;
-  height: 100vh;
-}
-
-section.overview {
-  margin-top: 100vh;
-}
 
 h1 {
   font-size: 3.75rem;
@@ -52,4 +31,14 @@ canvas {
   max-width: 100vw;
   transform: translate(-50%, -50%);
   z-index: -1;
+}
+
+section.section {
+  background-color: white;
+  text-align: center;
+  height: 100vh;
+}
+
+section.overview {
+  margin-top: 100vh;
 }
