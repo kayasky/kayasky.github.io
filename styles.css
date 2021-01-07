@@ -1,13 +1,9 @@
-html {
-  height: 100vh;
-}
-
 body {
   background: #000;
   margin: 0 auto;
-  height: 500vh;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(#000000, #0F0F0F);
 }
 
 h1 {
@@ -19,26 +15,9 @@ h1 {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: translateY(50vh);
-  transition-property: all;
-  transition-duration: 250ms;
-}
-
-canvas {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  max-height: 100vh;
-  max-width: 100vw;
-  transform: translate(-50%, -50%);
-  z-index: -1;
 }
 
 section.section {
-  background-color: white;
   text-align: center;
   height: 100vh;
-}
-
-section.overview {
-  margin-top: 100vh;
 }
