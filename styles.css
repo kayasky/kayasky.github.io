@@ -1,0 +1,23 @@
+body {
+  background: #000;
+  margin: 0 auto;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(#000000, #0F0F0F);
+}
+
+h1 {
+  font-size: 3.75rem;
+  margin: 0rem;
+  color: #D8267D;
+  background: linear-gradient(#e72081, #911350);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: translateY(50vh);
+}
+
+section.section {
+  text-align: center;
+  height: 100vh;
+}
