@@ -5,7 +5,7 @@ html {
 body {
   background: #000;
   margin: 0 auto;
-  height: 500vh;
+  height: 1000vh;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -14,10 +14,10 @@ h1 {
   font-size: 3.75rem;
   margin: 0rem;
   color: #D8267D;
-  background: linear-gradient(#e72081, #911350);
+  /* background: linear-gradient(#e72081, #911350);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
   transform: translateY(50vh);
   transition-property: all;
   transition-duration: 250ms;
