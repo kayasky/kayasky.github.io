@@ -24,23 +24,26 @@
     );
 
     section1Header.style.fontSize = `${section1HeaderFontSize + Math.min(frameIndex * 1.5, section1HeaderMaxFontSize)}px`;
-    if (window.pageYOffset < section2InitialTop) {
+    if (isScrollPositionAbove(section2InitialTop)) {
+      stopAt = 0;
       section2HeaderOpacity = 0;
       section2.style.position = '';
       section2.style.top = '';
-    } else if (window.pageYOffset > section2InitialTop && window.pageYOffset < section2InitialTop + parseInt(window.getComputedStyle(section2).height, 10)) {
+    } else if (isScrollPositionWithin(section2InitialTop, section2)) {
       section2.style.position = 'fixed';
       section2.style.top = '0';
       section2HeaderOpacity = ((window.pageYOffset - section2InitialTop) / parseInt(window.getComputedStyle(section2).height, 10));
       section2HeaderTransform = section2HeaderOpacity * 100;
-    } else if (window.pageYOffset > section2InitialTop + parseInt(window.getComputedStyle(section2).height, 10)) {
+    } else if (isScrollPositionBelow(section2InitialTop, section2)) {
       if (!stopAt) {
         stopAt = window.pageYOffset;
         section2.style.top = `${stopAt}px`;
         section2.style.position = '';
       }
       section2HeaderOpacity = 1;
+      section2.style.position = '';
     } else {
+      stopAt = 0;
       section2.style.top = '';
       section2.style.position = '';
     }
@@ -48,5 +51,17 @@
     section2Header.style.opacity = section2HeaderOpacity;
     section2Header.style.transform = `translateY(calc(50vh - ${section2HeaderTransform}px))`;
 
+  }
+
+  const isScrollPositionAbove = (elementTop) => {
+    return window.pageYOffset < elementTop;
+  }
+
+  const isScrollPositionWithin = (elementTop, element) => {
+    return window.pageYOffset > elementTop && window.pageYOffset < elementTop + parseInt(window.getComputedStyle(element).height, 10);
+  }
+
+  const isScrollPositionBelow = (elementTop, element) => {
+    return window.pageYOffset > elementTop + parseInt(window.getComputedStyle(element).height, 10);
   }
 })();
